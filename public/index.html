@@ -1,0 +1,204 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="jscript.js"></script>
+</head>
+<body class="text-gray-800 font-body bg-gray-100">
+    
+    <div>
+        <nav class="h-16 p-4">
+            <div class="align-center text-gray-600 font-semibold fixed">
+                <ul>
+                    <li class="inline-block mr-2 hover:text-gray-200 hover:bg-gray-700 p-2">Stations</li>
+                    <li class="inline-block mr-2 hover:text-gray-200 hover:bg-gray-700 p-2">About</li>
+                    <li class="inline-block hover:text-gray-200 hover:bg-gray-700 p-2">Help</li>
+                </ul>
+            </div>
+        </nav>
+    
+        <header class="bg-white shadow">
+            <div class="mx-auto py-4 px-2 sm:px-2 lg:px-2">
+                <h1 class="font-bold leading-tight text-gray-900">
+                    METARs
+                </h1>
+                <div id="EDDLMetar" class="text-sm mr-2 inline-block border-r-2 border-blue-400"></div>
+                <div id="EDDKMetar" class="text-sm mr-2 inline-block"></div>
+                <div id="EDDGMetar" class="text-sm inline-block"></div>
+                <div id="EDLVMetar" class="text-sm inline-block"></div>
+            </div>
+        </header>
+        <main>
+            <div>
+                <!-- Replace with your content -->
+                <div class="m-2">
+
+                    <div id="EDDL_SID" class="">
+                        <h3 class="font-bold inline-block">EDDL SIDs <span class="font-normal text-sm">(all SIDs initial climb 5.000ft)</span></h3>
+                        <div class="inline-block">
+                            <input type="checkbox" id="cb_EDDL_SID_23L"   class="ml-12" checked value="EDDL_SID_23L" onclick="hideRW(event)">
+                            <label for="scales" class="mr-1">23L</label>
+                            <input type="checkbox" name="scales" checked value="EDDL_SID_23R" onclick="hideRW(event)">
+                            <label for="scales" class="mr-1">23R</label>
+                            <input type="checkbox" name="scales" checked value="EDDL_SID_05L" onclick="hideRW(event)">
+                            <label for="scales" class="mr-1">05L</label>
+                            <input type="checkbox" name="scales" checked value="EDDL_SID_05R" onclick="hideRW(event)">
+                            <label for="scales" class="mr-1">05R</label>
+                        </div>
+                        
+                        <table class="bg-white table-auto">
+                            <thead class="bg-blue-300">
+                                <tr class="">
+                                    <th class="w-12"></th>
+                                    <th class="w-12 hover:bg-gray-700 hover:text-gray-100"><div class="tooltip">COL<span class='tooltip-text p-2 -mt-6 -ml-6 rounded'>SID COLA<br>No restrictions applied</span></div></th>
+                                    <th class="w-12 hover:bg-gray-700 hover:text-gray-100"><div class="tooltip">DODEN<span class='tooltip-text p-2 -mt-6 -ml-6 rounded'>SID DODEN<br>RFL 250+ Flights unable shall file via KUMIK</span>
+                                    </div></1h>
+                                    <th class="w-12 hover:bg-gray-700 hover:text-gray-100"><div class="tooltip">GMH<span class='tooltip-text p-2 -mt-6 -ml-6 rounded'>SID GMH<br> RFL 140 or below</span>
+                                    </div></1h>
+                                    <th class="w-12 hover:bg-gray-700 hover:text-gray-100"><div class="tooltip">KUMIK<span class='tooltip-text p-2 -mt-6 -ml-6 rounded'>SID KUMIK<br>RFL 150 or above</span>
+                                    </div></1h>
+                                    <th class="w-12 hover:bg-gray-700 hover:text-gray-100"><div class="tooltip">LMA<span class='tooltip-text p-2 -mt-6 -ml-6 rounded'>SID LMA<br>Only for flights to EDLN</span>
+                                    </div></1h>
+                                    <th class="w-12 hover:bg-gray-700 hover:text-gray-100"><div class="tooltip">MEVEL<span class='tooltip-text p-2 -mt-6 -ml-6 rounded'>SID MEVEL<br>No restrictions applied</span></div></th>
+                                    <th class="w-12 hover:bg-gray-700 hover:text-gray-100"><div class="tooltip">MODRU<span class='tooltip-text p-2 -mt-6 -ml-6 rounded'>SID MODRU<br>RFL 210 or above</span>
+                                    </div></1h>
+                                    <th class="w-12 hover:bg-gray-700 hover:text-gray-100"><div class="tooltip">NETEX<span class='tooltip-text p-2 -mt-6 -ml-6 rounded'>SID NETEX<br>RFL 100-200 or via Z282 DIBIR L179</span>
+                                    </div></1h>
+                                    <th class="w-12 hover:bg-gray-700 hover:text-gray-100"><div class="tooltip">NVO<span class='tooltip-text p-2 -mt-6 -ml-6 rounded'>SID NVO<br>RFL 90 or below. Flights with RFL 100+ shall file via MODRU</span>
+                                    </div></1h>
+                                    <th class="w-12 hover:bg-gray-700 hover:text-gray-100"><div class="tooltip">NUDGO<span class='tooltip-text p-2 -mt-6 -ml-6 rounded'>SID NUDGO<br>RFL 245 or below</span>
+                                    </div></1h>
+                                    <th class="w-12 hover:bg-gray-700 hover:text-gray-100"><div class="tooltip">SONEB<span class='tooltip-text p-2 -mt-6 -ml-6 rounded'>SID SONEB<br>RFL 140 or higher via RKN/TELNI</span>
+                                    </div></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-blue-200" id="EDDL_SID_CFL">
+                                    <td></td>
+                                    <td>FL240</td>
+                                    <td>FL240</td>
+                                    <td>FL240</td>
+                                    <td>FL240</td>
+                                    <td>FL240</td>
+                                    <td>FL240</td>
+                                    <td>FL240</td>
+                                    <td>FL240</td>
+                                    <td>FL240</td>
+                                    <td>FL240</td>
+                                    <td>FL160</td>
+                                </tr>
+                                <tr class="bg-gray-300" id="EDDL_SID_23L">
+                                    <td>23L</td>
+                                    <td>5T</td>
+                                    <td>9T</td>
+                                    <td>9T</td>
+                                    <td>6T</td>
+                                    <td>2T</td>
+                                    <td>3T</td>
+                                    <td>1T</td>
+                                    <td>5T</td>
+                                    <td>1T</td>
+                                    <td>5T</td>
+                                    <td>7T</td>
+                                </tr>
+                                <tr class="bg-white" id="EDDL_SID_23R">
+                                    <td>23R</td>
+                                    <td>3H</td>
+                                    <td>3H</td>
+                                    <td>3H</td>
+                                    <td>3H</td>
+                                    <td>2H</td>
+                                    <td>3H</td>
+                                    <td>1H</td>
+                                    <td>2H</td>
+                                    <td>1U</td>
+                                    <td>3H</td>
+                                    <td>3H</td>
+                                </tr>
+                                <tr class="bg-gray-300" id="EDDL_SID_05L">
+                                    <td>05L</td>
+                                    <td>4J</td>
+                                    <td>6J</td>
+                                    <td>8Y</td>
+                                    <td>4J</td>
+                                    <td>6Y</td>
+                                    <td>8J</td>
+                                    <td>6J</td>
+                                    <td>3J</td>
+                                    <td>2Y</td>
+                                    <td>4J</td>
+                                    <td>5J</td>
+                                </tr>
+                                <tr class="bg-white" id="EDDL_SID_05R">
+                                    <td>05R</td>
+                                    <td>4Z</td>
+                                    <td>6Z</td>
+                                    <td>5Z</td>
+                                    <td>4Z</td>
+                                    <td>1Z</td>
+                                    <td>9Z</td>
+                                    <td>6Z</td>
+                                    <td>3Z</td>
+                                    <td>2Z</td>
+                                    <td>4Z</td>
+                                    <td>5Z</td>
+                                </tr>
+                                <tr class="bg-blue-100 text-sm">
+                                    <td>&nbsp;</td>
+                                    <td>Odd</td>
+                                    <td>Odd</td>
+                                    <td>Odd</td>
+                                    <td>Odd</td>
+                                    <td>Even</td>
+                                    <td>Odd</td>
+                                    <td>Odd</td>
+                                    <td>Even</td>
+                                    <td>Both</td>
+                                    <td>Odd</td>
+                                    <td>Even</td>
+                                </tr>
+                                <tr class="text-xs">
+                                    <td>&nbsp;</td>
+                                    <td>South</td>
+                                    <td>South</td>
+                                    <td>South</td>
+                                    <td>South</td>
+                                    <td>West</td>
+                                    <td>North-West</td>
+                                    <td>West</td>
+                                    <td>West</td>
+                                    <td>West</td>
+                                    <td>Ost</td>
+                                    <td>Nord-West</td>
+                                </tr>
+                            </tbody>
+                        </table>                        
+                    </div>
+                    <div>
+                        <h3 class="font-bold">METARs</h3>
+                        <table id="MetarTable">
+                            <thead>
+                                <tr class="tableizer-firstrow">
+                                    <th>Station </th>
+                                    <th>Wind </th>
+                                    <th>QNH</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- /End replace -->
+            </div>
+        </main>
+    </div>
+<script>
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+{
+    "meta": {
+        "timestamp": "2021-02-03T19:56:55.037820Z",
+        "stations_updated": "2021-01-24"
+    },
+    "altimeter": {
+        "repr": "Q0997",
+        "value": 997,
+        "spoken": "zero nine nine seven"
+    },
+    "clouds": [
+        {
+            "repr": "FEW010",
+            "type": "FEW",
+            "altitude": 10,
+            "modifier": null,
+            "direction": null
+        },
+        {
+            "repr": "SCT021",
+            "type": "SCT",
+            "altitude": 21,
+            "modifier": null,
+            "direction": null
+        },
+        {
+            "repr": "BKN042",
+            "type": "BKN",
+            "altitude": 42,
+            "modifier": null,
+            "direction": null
+        }
+    ],
+    "flight_rules": "MVFR",
+    "other": [],
+    "sanitized": "EDDL 031950Z 23005KT 8000 RA FEW010 SCT021 BKN042 08/08 Q0997 BECMG 25011KT NSW",
+    "visibility": {
+        "repr": "8000",
+        "value": 8000,
+        "spoken": "eight thousand"
+    },
+    "wind_direction": {
+        "repr": "230",
+        "value": 230,
+        "spoken": "two three zero"
+    },
+    "wind_gust": null,
+    "wind_speed": {
+        "repr": "05",
+        "value": 5,
+        "spoken": "five"
+    },
+    "wx_codes": [
+        {
+            "repr": "RA",
+            "value": "Rain"
+        }
+    ],
+    "raw": "EDDL 031950Z 23005KT 8000 RA FEW010 SCT021 BKN042 08/08 Q0997 BECMG 25011KT NSW",
+    "station": "EDDL",
+    "time": {
+        "repr": "031950Z",
+        "dt": "2021-02-03T19:50:00Z"
+    },
+    "remarks": "BECMG 25011KT NSW",
+    "dewpoint": {
+        "repr": "08",
+        "value": 8,
+        "spoken": "eight"
+    },
+    "remarks_info": {
+        "dewpoint_decimal": null,
+        "temperature_decimal": null
+    },
+    "runway_visibility": [],
+    "temperature": {
+        "repr": "08",
+        "value": 8,
+        "spoken": "eight"
+    },
+    "wind_variable_direction": [],
+    "units": {
+        "altimeter": "hPa",
+        "altitude": "ft",
+        "temperature": "C",
+        "visibility": "m",
+        "wind_speed": "kt"
+    }
+}
